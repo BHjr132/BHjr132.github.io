@@ -65,11 +65,12 @@
         function plot() {
             for(var i = 0; i < names.length; i++) {
                 var singname = names[i];
+                var party = party[i];
                 var soc = color[i];
                 var globalism = x[i];
                 var lib = y[i];
                 var prog = z[i];
-                var result = "</br>" + singname + "</br>Equality=" + soc + "</br>Global=" + globalism + "</br>Lib=" + lib + "</br>Prog=" + prog;
+                var result = "</br>" + singname + " (" + party +")</br>Equality=" + soc + "</br>Global=" + globalism + "</br>Lib=" + lib + "</br>Prog=" + prog;
                 names[i] = result;
             }
             for(var i = 0; i < color.length; i++) {
@@ -88,7 +89,7 @@
                 },
                 type: 'scatter3d',
                 scene: 'dataplot',
-                name: "More red = more communist"
+                name: "More Red = More Markets"
             }
             graph = Plotly.plot(gd, [trace], layout);
         }
@@ -126,7 +127,7 @@
                 }
             }
         }
-        Plotly.d3.csv('https://BHjr132.github.io/DwarvenDistrict/8val.csv', function(err, rows){
+        Plotly.d3.csv('https://BHjr132.github.io/mhoc.csv', function(err, rows){
             function unpack(rows, key) {
                 return rows.map(function(row) { 
                     return row[key];
