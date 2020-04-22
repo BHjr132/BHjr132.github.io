@@ -65,12 +65,11 @@
         function plot() {
             for(var i = 0; i < names.length; i++) {
                 var singname = names[i];
-                var party = party[i];
                 var soc = color[i];
                 var globalism = x[i];
                 var lib = y[i];
                 var prog = z[i];
-                var result = "</br>" + singname + " (" + party +")</br>Equality=" + soc + "</br>Global=" + globalism + "</br>Lib=" + lib + "</br>Prog=" + prog;
+                var result = "</br>" + singname + "</br>Equality: " + soc + "</br>Globalism: " + globalism + "</br>Freedom: " + lib + "</br>Progress: " + prog;
                 names[i] = result;
             }
             for(var i = 0; i < color.length; i++) {
@@ -138,7 +137,6 @@
             z = unpack(rows, 'prog');
             names = unpack(rows, 'name');
             color = unpack(rows, 'soc');
-            party = unpack(rows, 'party');
             plot();
             // var trace1 = {
             //     x:unpack(rows, 'x'), y: unpack(rows, 'y'), z: unpack(rows, 'z'), text: unpack(rows, 'name'),
